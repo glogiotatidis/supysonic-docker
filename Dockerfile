@@ -4,7 +4,7 @@ RUN echo "deb http://www.deb-multimedia.org jessie main non-free" > /etc/apt/sou
 RUN apt-get update && apt-get install -y -q --force-yes ffmpeg mpg123 vorbis-tools lame flac
 
 WORKDIR /app
-RUN pip install flask storm pillow simplejson requests mutagen watchdog gunicorn https://github.com/glogiotatidis/supysonic/archive/master.tar.gz
+RUN pip install flask storm pillow simplejson requests mutagen watchdog gunicorn https://github.com/spl0k/supysonic/archive/master.tar.gz
 RUN mkdir /data
 
 COPY app.py /app/app.py
