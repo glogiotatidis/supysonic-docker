@@ -11,5 +11,5 @@ COPY app.py /app/app.py
 COPY supysonic.conf /etc/supysonic
 
 # 4 workers, 180 secs timeout due to transcoding
-CMD gunicorn app --bind 0.0.0.0 -w 4 -t 180
+CMD gunicorn app --bind 0.0.0.0 -w ${WORKERS:-4} -t ${TIMEOUT:-180}
 EXPOSE 8000
